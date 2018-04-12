@@ -1,0 +1,4 @@
+example/
+node_modules/
+config.js
+database/knex_postgres_seed/node_modules/
