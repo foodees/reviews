@@ -1,5 +1,9 @@
 // Update with your config settings.
 
+
+// to start db server: $ pg_ctl -D /usr/local/var/postgres start
+// to start postgres shell: $ psql foodee_user_reviews
+
 module.exports = {
   development: {
     client: 'pg',

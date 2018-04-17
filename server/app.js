@@ -9,7 +9,7 @@ var parser = require('body-parser');
 
 // Router
 var router = require('./routes.js');
-
+var path = require('path');
 var app = express();
 
 
@@ -20,15 +20,11 @@ app.use(morgan('dev'));
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
+//TODO UNCOMMENT THIS AFTER CLIENT IMPLEMENTATION
+app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/biz/:business_id/reviews', router);
 
-
-
-
-
-//TODO UNCOMMENT THIS AFTER CLIENT IMPLEMENTATION
-//app.use(express.static(__dirname + '/../client'));
 
 if (!module.parent) {
   app.listen(app.get('port'));
