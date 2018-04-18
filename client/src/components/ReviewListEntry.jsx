@@ -15,7 +15,7 @@ var ReviewListEntry = (props) => {
       <p key={idx}>{paragraph}</p>
     );
   }
-  console.log('textWithSpacing: ', textWithSpacing);
+  //console.log('textWithSpacing: ', textWithSpacing);
 
   return(
     <div className="review-list-entry">

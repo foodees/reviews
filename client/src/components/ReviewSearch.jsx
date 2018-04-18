@@ -34,12 +34,11 @@ class ReviewSearch extends React.Component {
           <button> Search Comments </button>
         </span>
         <span id="reviews-sort"> Sort By:
-          <select id="sortBy">
+          <select id="sortBy" onChange={this.props.sort}>
             <option value="newestFirst" defaultValue>Newest First</option>
             <option value="oldestFirst">Oldest First</option>
             <option value="highestRated">Highest Rated</option>
             <option value="lowestRated">Lowest Rated</option>
-            <option value="elites">Elites</option>
           </select>
         </span>
       </div>

@@ -21,7 +21,7 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
 //TODO UNCOMMENT THIS AFTER CLIENT IMPLEMENTATION
-app.use('/', express.static(path.join(__dirname, '../client/dist')));
+app.use('/biz/:business_id', express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/biz/:business_id/reviews', router);
 

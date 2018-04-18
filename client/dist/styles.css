@@ -27,6 +27,21 @@ p {
   margin-top: 1em;
 }
 
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.pages {
+  color: blue;
+}
+
+.selectedPage {
+  color: black;
+  font-weight: bold;
+}
+
 /* .user-contents, .review-contents {
   display: flex;
   flex-direction: row;

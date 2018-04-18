@@ -27,6 +27,7 @@
     "pg": "^7.4.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
+    "react-paginate": "^5.2.2",
     "react-stars": "^2.2.5",
     "webpack": "^4.5.0"
   },
