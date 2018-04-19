@@ -20,7 +20,6 @@ router.get('/search/desc', controller.search.getByDateDesc);
 
 router.get('/search/asc', controller.search.getByDateAsc);
 
-//TODO
 router.get('/search/ratingdesc', controller.search.getByRatingDesc);
 
 router.get('/search/ratingasc', controller.search.getByRatingAsc);

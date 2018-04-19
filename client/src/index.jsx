@@ -5,8 +5,7 @@ import axios from 'axios';
 import ReviewSearch from './components/ReviewSearch.jsx';
 import ReviewList from './components/ReviewList.jsx';
 import ReactPaginate from 'react-paginate';
-//import reviewDummyData from './reviewDummyData.js';
-//import userDummyData from './userDummyData.js';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -31,61 +30,100 @@ class App extends React.Component {
     this.getReviews(this.state.restaurantId, this.state.page);
   }
 
-// ----------------------------------------------------------------------
-
   setSearchTerm(text) {
     this.setState({searchTerm: text.target.value});
   }
 
   searchReviews() {
     //TODO
-    axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/search/`, {
-      params: {
+    this.getReviewCount(this.state.searchTerm);
+    this.getReviews(this.state.restaurantId, this.state.page, '/desc', this.state.searchTerm);
+  }
+
+  getReviewCount(searchTerm = '') {
+    var params;
+    if (searchTerm === '') {
+      axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/count`,
+        {
+          params: {
+            id: this.state.restaurantId
+          }
+        })
+          .then((response) => {
+            console.log('CLIENT GET REVIEW COUNT SUCCESS: ', response);
+            this.setState({
+              numPages: Math.ceil(response.data[0].count / 10)
+            });
+          })
+            .catch((err) => {
+              console.log('CLIENT GET ERROR: ', err);
+            });
+    } else {
+      params = {
         id: this.state.restaurantId,
-        term: this.state.searchTerm
-      }
-    })
+        term: searchTerm
+      };
+      axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/search/count`,
+        {
+          params: {
+            id: this.state.restaurantId,
+            term: searchTerm
+          }
+        })
+          .then((response) => {
+            console.log('CLIENT GET REVIEW COUNT SUCCESS: ', response);
+            this.setState({
+              numPages: Math.ceil(response.data[0].count / 10)
+            });
+          })
+            .catch((err) => {
+              console.log('CLIENT GET ERROR: ', err);
+            });
+    }
   }
 
-// ----------------------------------------------------------------------
-
-  getReviewCount() {
-    axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/count`,
-      {
-        params: {
-          id: this.state.restaurantId
-        }
-      })
-        .then((response) => {
-          console.log('CLIENT GET REVIEW COUNT SUCCESS: ', response);
-          this.setState({
-            numPages: Math.ceil(response.data[0].count / 10)
-          });
+  getReviews(id, page, sortOrder = '/desc', searchTerm = '') {
+    var params;
+    if (searchTerm === '') {
+      axios.get(`http://localhost:3004/biz/${id}/reviews${sortOrder}`,
+        {
+          params: {
+            id: id,
+            page: page
+          }
         })
-          .catch((err) => {
-            console.log('CLIENT GET ERROR: ', err);
-          });
-  }
-
-  getReviews(id, page, sortOrder = '/desc') {
-    axios.get(`http://localhost:3004/biz/${id}/reviews${sortOrder}`,
-      {
-        params: {
-          id: id,
-          page: page
-        }
-      })
-        .then((response) => {
-          console.log('CLIENT GET SUCCESS: ', response);
-          // console.log('what is this: ', this);
-          this.setState({
-            reviews: response.data.reviews,
-            users: response.data.users
-          });
+          .then((response) => {
+            console.log('CLIENT GET SUCCESS: ', response);
+            // console.log('what is this: ', this);
+            this.setState({
+              reviews: response.data.reviews,
+              users: response.data.users
+            });
+          })
+            .catch((err) => {
+              console.log('CLIENT GET ERROR: ', err);
+            });
+    } else {
+      axios.get(`http://localhost:3004/biz/${id}/reviews/search${sortOrder}`,
+        {
+          params: {
+            id: id,
+            page: page,
+            term: searchTerm
+          }
         })
-          .catch((err) => {
-            console.log('CLIENT GET ERROR: ', err);
-          });
+          .then((response) => {
+            console.log('CLIENT GET SUCCESS: ', response);
+            // console.log('what is this: ', this);
+            this.setState({
+              reviews: response.data.reviews,
+              users: response.data.users
+            });
+          })
+            .catch((err) => {
+              console.log('CLIENT GET ERROR: ', err);
+            });
+    }
   }
 
   changeSort() {
@@ -93,13 +131,13 @@ class App extends React.Component {
       sortBy: $('#sortBy').val()
     }, () => {
       if (this.state.sortBy === 'newestFirst') {
-        this.getReviews(this.state.restaurantId, this.state.page, '/desc');
+        this.getReviews(this.state.restaurantId, this.state.page, '/desc', this.state.searchTerm);
       } else if (this.state.sortBy === 'oldestFirst') {
-        this.getReviews(this.state.restaurantId, this.state.page, '/asc');
+        this.getReviews(this.state.restaurantId, this.state.page, '/asc', this.state.searchTerm);
       } else if (this.state.sortBy === 'highestRated') {
-        this.getReviews(this.state.restaurantId, this.state.page, '/ratingdesc');
+        this.getReviews(this.state.restaurantId, this.state.page, '/ratingdesc', this.state.searchTerm);
       } else if (this.state.sortBy === 'lowestRated') {
-        this.getReviews(this.state.restaurantId, this.state.page, '/ratingasc');
+        this.getReviews(this.state.restaurantId, this.state.page, '/ratingasc', this.state.searchTerm);
       }
     });
   }
@@ -112,7 +150,7 @@ class App extends React.Component {
     return (
     <div id="reviews">
       <h2>Recommended Reviews for [input restaurant name here]</h2>
-      <ReviewSearch sort={this.changeSort.bind(this)} />
+      <ReviewSearch setSearchTerm={this.setSearchTerm.bind(this)} searchReviews={this.searchReviews.bind(this)} sort={this.changeSort.bind(this)} />
       <ReviewList reviews={this.state.reviews} users={this.state.users}/>
       <ReactPaginate
         className="pagination"
@@ -133,25 +171,25 @@ class App extends React.Component {
               this.setState({
                 page: page.selected + 1
               }, () => {
-                this.getReviews(this.state.restaurantId, this.state.page, '/desc');
+                this.getReviews(this.state.restaurantId, this.state.page, '/desc', this.state.searchTerm);
               });
             } else if (this.state.sortBy === 'oldestFirst') {
               this.setState({
                 page: page.selected + 1
               }, () => {
-                this.getReviews(this.state.restaurantId, this.state.page, '/asc');
+                this.getReviews(this.state.restaurantId, this.state.page, '/asc', this.state.searchTerm);
               });
             } else if (this.state.sortBy === 'highestRated') {
               this.setState({
                 page: page.selected + 1
               }, () => {
-                this.getReviews(this.state.restaurantId, this.state.page, '/ratingdesc');
+                this.getReviews(this.state.restaurantId, this.state.page, '/ratingdesc', this.state.searchTerm);
               });
             } else if (this.state.sortBy === 'lowestRated') {
               this.setState({
                 page: page.selected + 1
               }, () => {
-                this.getReviews(this.state.restaurantId, this.state.page, '/ratingasc');
+                this.getReviews(this.state.restaurantId, this.state.page, '/ratingasc', this.state.searchTerm);
               });
             }
           }
