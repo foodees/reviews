@@ -16,6 +16,7 @@ class App extends React.Component {
       restaurantId: window.location.href.split('/')[4],
       page: 1,
       numPages: 1,
+      searchTerm: '',
       reviews: [],
       users: [],
       sortBy: 'newestFirst'
@@ -26,6 +27,29 @@ class App extends React.Component {
   // dummy data: // SELECT * FROM foodee_reviews WHERE business_id = '--9e1ONYQuAa-CB_Rrw7Tw' ORDER BY date DESC OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 
   componentDidMount() {
+    this.getReviewCount();
+    this.getReviews(this.state.restaurantId, this.state.page);
+  }
+
+// ----------------------------------------------------------------------
+
+  setSearchTerm(text) {
+    this.setState({searchTerm: text.target.value});
+  }
+
+  searchReviews() {
+    //TODO
+    axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/search/`, {
+      params: {
+        id: this.state.restaurantId,
+        term: this.state.searchTerm
+      }
+    })
+  }
+
+// ----------------------------------------------------------------------
+
+  getReviewCount() {
     axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/count`,
       {
         params: {
@@ -41,8 +65,6 @@ class App extends React.Component {
           .catch((err) => {
             console.log('CLIENT GET ERROR: ', err);
           });
-
-    this.getReviews(this.state.restaurantId, this.state.page);
   }
 
   getReviews(id, page, sortOrder = '/desc') {

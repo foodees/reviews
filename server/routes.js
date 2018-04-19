@@ -16,7 +16,16 @@ router.post('/', controller.reviews.post);
 
 router.patch('/compliment', controller.reviews.patch);
 
-router.get('/search', controller.search.get);
+router.get('/search/desc', controller.search.getByDateDesc);
+
+router.get('/search/asc', controller.search.getByDateAsc);
+
+//TODO
+router.get('/search/ratingdesc', controller.search.getByRatingDesc);
+
+router.get('/search/ratingasc', controller.search.getByRatingAsc);
+
+router.get('/search/count', controller.search.getCount);
 
 
 
