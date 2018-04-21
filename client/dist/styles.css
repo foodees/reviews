@@ -21,6 +21,34 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border-bottom: 1px solid lightgrey;
+}
+
+#reviews-search-bar {
+  display: flex;
+  width: 20em;
+  height: 60px;
+}
+
+#reviews-input {
+  display: flex;
+  align-self: flex-start;
+  width: 60%;
+  height: 43%;
+}
+
+#reviews-button {
+  display: flex;
+  align-self: flex-start;
+  background: url('https://s3-us-west-1.amazonaws.com/foodee-reviews/searchbutton.png') no-repeat; */
+  cursor: pointer;
+  border: none;
+  width: 55px;
+  height: 54%;
+}
+
+#review-header {
+  color: #cc0000;
 }
 
 p {

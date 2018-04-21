@@ -3,6 +3,24 @@
 const db = require('../../database/index.js');
 
 module.exports = {
+  restaurant: {
+    get: (id) => {
+      console.log('inside model get. id: ', id);
+      return new Promise((resolve, reject) => {
+        var queryStr = `SELECT business_name FROM foodee_restaurant_names WHERE business_id = '${id}'`;
+
+        db.query(queryStr, (err, name) => {
+          if (err) {
+            console.log('GET RESTAURANT NAME DB QUERY ERROR: ', err);
+            reject(err);
+          } else {
+            console.log('GET RESTAURANT NAME SUCCESS');
+            resolve(name.rows);
+          }
+        });
+      });
+    }
+  },
   reviews: {
     getByDateDesc: (id, page) => {
       // select all reviews with pagination. ORDER BY, OFFSET, FETCH NEXT

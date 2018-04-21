@@ -3,8 +3,8 @@ import React from 'react';
 var ReviewSearch = (props) => (
   <div id="reviews-search">
     <span id="reviews-search-bar">
-      <input type="text" onChange={props.setSearchTerm}/>
-      <button onClick={props.searchReviews}> Search Comments </button>
+      <input id="reviews-input" type="text" onChange={props.setSearchTerm}/>
+      <button id="reviews-button" onClick={props.searchReviews}></button>
     </span>
     <span id="reviews-sort"> Sort By:
       <select id="sortBy" onChange={props.sort}>

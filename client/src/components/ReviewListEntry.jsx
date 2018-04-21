@@ -9,7 +9,7 @@ var ReviewListEntry = (props) => {
 
   if (props) {
     //var textWithSpacing = props.review.text.split('\\n').join('<br></br>');
-    var text = props.review.text.replace(/\\\\/g, /\\/);
+    var text = props.review.text.replace(/\\\\/g, /\\/).replace(/\\'/g, '\'').replace(/\\"/g, '\"');
     var textArr = text.split('\\n');
     var textWithSpacing = textArr.map((paragraph, idx) =>
       <p key={idx}>{paragraph}</p>
@@ -20,13 +20,13 @@ var ReviewListEntry = (props) => {
   return(
     <div className="review-list-entry">
       <div className="user-contents">
-        <div>put user image here</div>
+        <div><img src="https://s3-us-west-1.amazonaws.com/foodee-reviews/userpic.png" alt="user image"></img></div>
         <div>Name: {props.user.name}</div>
         <div>Friends: {props.user.fans}</div>
         <div>Review Count: {props.user.review_count}</div>
       </div>
       <div className="review-contents">
-        <div className="review-rating"><ReactStars count={5} value={props.review.stars} size={24} color2={'#ff0000'} edit={false}/> {moment(props.review.date, moment.ISO_8601).format('l')}</div>
+        <div className="review-rating"><ReactStars count={5} value={props.review.stars} size={24} color2={'#cc0000'} edit={false}/> {moment(props.review.date, moment.ISO_8601).format('l')}</div>
         <span className="review-text">{textWithSpacing}</span>
         <div className="review-compliments"> Useful: {props.review.useful} | Funny: {props.review.funny} | Cool: {props.review.cool}</div>
       </div>

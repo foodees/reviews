@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       // iterator: window.location.href.split("/").pop().substring(4) || '1',
       restaurantId: window.location.href.split('/')[4],
+      restaurantName: '',
       page: 1,
       numPages: 1,
       searchTerm: '',
@@ -28,6 +29,7 @@ class App extends React.Component {
   componentDidMount() {
     this.getReviewCount();
     this.getReviews(this.state.restaurantId, this.state.page);
+    this.getRestaurantName(this.state.restaurantId);
   }
 
   setSearchTerm(text) {
@@ -38,6 +40,24 @@ class App extends React.Component {
     //TODO
     this.getReviewCount(this.state.searchTerm);
     this.getReviews(this.state.restaurantId, this.state.page, '/desc', this.state.searchTerm);
+  }
+
+  getRestaurantName(id) {
+    axios.get(`http://localhost:3004/biz/${id}/reviews/restaurant`,
+      {
+        params: {
+          id: id
+        }
+      })
+        .then((response) => {
+          console.log('CLIENT GET RESTAURANT NAME: ', response);
+          this.setState({
+            restaurantName: response.data[0].business_name
+          });
+        })
+          .catch((err) => {
+            console.log('CLIENT GET ERROR: ', err);
+          });
   }
 
   getReviewCount(searchTerm = '') {
@@ -97,7 +117,7 @@ class App extends React.Component {
             // console.log('what is this: ', this);
             this.setState({
               reviews: response.data.reviews,
-              users: response.data.users
+              users: response.data.users,
             });
           })
             .catch((err) => {
@@ -149,7 +169,7 @@ class App extends React.Component {
 
     return (
     <div id="reviews">
-      <h2>Recommended Reviews for [input restaurant name here]</h2>
+      <h2><span id="review-header">Recommended Reviews</span> for {this.state.restaurantName}</h2>
       <ReviewSearch setSearchTerm={this.setSearchTerm.bind(this)} searchReviews={this.searchReviews.bind(this)} sort={this.changeSort.bind(this)} />
       <ReviewList reviews={this.state.reviews} users={this.state.users}/>
       <ReactPaginate

@@ -3,6 +3,21 @@
 const model = require('../model');
 
 module.exports = {
+  restaurant: {
+    get: (req, res) => {
+      var params = req.query;
+      console.log('inside controller get: ', params.id);
+      model.restaurant.get(params.id)
+        .then((data) => {
+          console.log('CONTROLLER GET REVIEWS SUCCESS: ', data);
+          res.send(data);
+        })
+          .catch((err) => {
+            console.log('CONTROLLER GET REVIEWS ERR: ', err);
+            res.send(err);
+          });
+    }
+  },
   reviews: {
     getByDateDesc: (req, res) => {
       var params = req.query;

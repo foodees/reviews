@@ -2,6 +2,8 @@ var controller = require('./controller');
 var router = require('express').Router();
 
 //Connect controller methods to their corresponding routes
+router.get('/restaurant', controller.restaurant.get);
+
 router.get('/desc', controller.reviews.getByDateDesc);
 
 router.get('/asc', controller.reviews.getByDateAsc);
