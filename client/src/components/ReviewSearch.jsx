@@ -6,7 +6,7 @@ var ReviewSearch = (props) => (
       <input id="reviews-input" type="text" onChange={props.setSearchTerm}/>
       <button id="reviews-button" onClick={props.searchReviews}></button>
     </span>
-    <span id="reviews-sort"> Sort By:
+    <span id="reviews-sort"> <span>Sort By: </span>
       <select id="sortBy" onChange={props.sort}>
         <option value="newestFirst" defaultValue>Newest First</option>
         <option value="oldestFirst">Oldest First</option>

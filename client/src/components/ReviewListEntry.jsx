@@ -21,9 +21,11 @@ var ReviewListEntry = (props) => {
     <div className="review-list-entry">
       <div className="user-contents">
         <div><img src="https://s3-us-west-1.amazonaws.com/foodee-reviews/userpic.png" alt="user image"></img></div>
-        <div>Name: {props.user.name}</div>
-        <div>Friends: {props.user.fans}</div>
-        <div>Review Count: {props.user.review_count}</div>
+        <div>
+          <div style={{color: 'blue', fontWeight: 'bold'}}>{props.user.name}</div><br></br>
+          <div><span><i className="fas fa-users fa-lg" style={{color: 'Tomato'}}></i> {props.user.fans} friends</span></div><br></br>
+          <div><span><i className="far fa-star fa-lg" style={{color: 'Tomato'}}></i> {props.user.review_count} reviews</span></div>
+        </div>
       </div>
       <div className="review-contents">
         <div className="review-rating"><ReactStars count={5} value={props.review.stars} size={24} color2={'#cc0000'} edit={false}/> {moment(props.review.date, moment.ISO_8601).format('l')}</div>
