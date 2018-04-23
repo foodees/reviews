@@ -27,3 +27,4 @@ database/pg_ident.conf
 database/PG_VERSION
 database/postgresql.auto.conf
 database/postgresql.conf
+coverage
