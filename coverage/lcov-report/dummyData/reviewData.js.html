@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for dummyData/reviewData.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">dummyData</a> reviewData.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/1</span>
+      </div>
+    </div>
+    <p class="quiet">
+      Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+    </p>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = {
+  pageOne: [
+      {
+          "id": "29Z-uyWPDh-saHLCh7OzhA",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "hM4D0u2h9PqH2xTOPaB10A",
+          "stars": 5,
+          "date": "2017-12-07T08:00:00.000Z",
+          "text": "Another great meal here. I try to dine here when I visit Vegas. I always get the ribeye steak. The sides are all good. Great service",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "1RR4DEdsbaG8kiS_DF_xVw",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "gUpK1Ibyle50ZFvq6SEW9w",
+          "stars": 5,
+          "date": "2017-08-27T07:00:00.000Z",
+          "text": "Love the service here and the food is great. We always come here for family birthdays.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "4e-cxYVdlIu2ZDxVJqUfOQ",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "EAOt1UQhJD0GG3l_jv7rWA",
+          "stars": 5,
+          "date": "2017-08-25T07:00:00.000Z",
+          "text": "This place is superb from the customer service to the food. If you are in the area, I highly recommend trying this place out! You will not be disappointed.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "0b9neQ_wNoYiBW6oTp9FFA",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "RpNave-qiDUQ_EGHdL6CIA",
+          "stars": 1,
+          "date": "2017-05-21T07:00:00.000Z",
+          "text": "The fact that we were able to change our reservation for 8 people, three different times on a very crowded Mothers Day weekend should\\'ve been my first clue that this wasn\\'t going to be a great meal. The steaks had absolutely NO flavor, the options weren\\'t good and the ahi salad with a whopping 3 small pieces of tuna was far from worth the cost. I come to the Venetian very often as an invited guest and have never had such a sub-par dining experience. With so many other great options don\\'t bother with this one....",
+          "useful": 1,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "2Sk-2jlmv0jj4RjGiGPbEw",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "U4INQZOPSUaj8hMjLlZ3KA",
+          "stars": 4,
+          "date": "2017-04-23T07:00:00.000Z",
+          "text": "Ask ten local \\'foodies\\' to name their favorite Las Vegas Steakhouse and it would be surprising if a single one said Delmonico, and even more shocking if any of them knew that Chef Ronnie Rainwater had been working in that kitchen ever since the restaurant was opened nearly eighteen years ago, yet with family in town and a love of Emeril Lagasse dating back to the earliest days of his expansion to Universal CityWalk it only seemed right to sit down for dinner at the oft-overlooked space in Venetian\\'s RR, a Tasting Menu showing that not only has the restaurant not lost its fast-ball, but that it has learned a few new tricks as well\\n\\nSituated at the end of a string of eateries nearest Palazzo, Mario Batalli\\'s B&amp;B across the way soon to undergo renovations and places like DB, Pinot Brasserie and others come-and-gone since Lagasse chose to bring his New Orleans Steakhouse to Las Vegas in May of 1999, those visiting Delmonico Steakhouse will first notice the large bar previously tended by Max Solano as they approach the space before checking in at a hostess podium, reservations quickly confirmed as General Manager Tuan Tran keeps a watchful eye over an expanse that can easily seat hundreds, the space divided into four different rooms with the most quiet off to the left with the walls lined in Wine and glass\\n\\nHaving previously discussed a degustation with both Chef Rainwater and Emeril\\'s Director of Operations Mike Olsen, a fixed price arrangement allowing the kitchen total control over a menu that would be delivered in five courses to highlight Spring, it was after brief greetings from the Chef and a trio of waiters that were a bit \\'stiff\\' but still pleasant that the meal got started, all dishes presented with a comprehensive description from Ronnie with the majority served exactly as they are if ordered a la carte, save for the entrée course and a smorgasbord of Dessert\\n\\nAlways tempting fans by way of daily specials via Social Media, as though the menu of Creole riffs on traditional Steakhouse fare from a culinary legend is somehow not enough, it was with a few of Delmonico\\'s signature Pop-Overs paired to creamy, whipped Butter that dinner got started alongside snacks including the longtime favorite Truffle and Parmesan Chips plus crisp Cracklins made from Kurobuta Pork, the kitchen remiss to waste any part of such an outstanding Animal that is also involved in several other plates offered throughout the menu\\n\\nStarting light and working towards heavier items, the second course presenting two specials including Deviled Eggs topped in a big hunk of King Crab and a spoonful of Caviar alongside Burrata tinged in Black Truffles with a vibrant Spring Pea Pesto on top, those looking for something a bit more hearty would be well served to order a warm Spinach Salad topped in Praline Bacon and an Egg that is first lightly poached and then fried crisp before being hemisected, the bright orange Yolk blending with Bacon Vinaigrette to form a coating to each leaf that is slick yet light and acidic.\\n\\nHaving already experienced many Delmonico classics during two prior visits, but always happy to see the thick Bone-In Bacon with Root Beer Glaze and Pickled Watermelon land on the table, two seasonal plates saw a thick steak of Grade A Duck Liver cooked to caramelizaion on the outside with its smooth center offset by a Hazelnut pastry something akin to Baklava plus sweetness added by Berries; the Rabbit Porchetta wrapped in Prosciutto opting to go all-in on savory with the lean meat carefully complimented by Mushrooms and Pea purée.\\n\\nGetting to the Meat of the menu...or more meatier at least...it was for course four that the kitchen decided to switch up presentations a bit from the typical plated Steaks in favor a large round block of Pork, Beef and side dishes, the Pork Chop about as tender as they get with two Bone-In Ribs showing the Kurobuta Pig in yet another way while the two cuts of Steak were good, but unfortunately not quite on the same level as Jean Georges or Carnevino in terms or richness or texture, the sides mostly forgettable even though others on the menu sounded more innovative while Ronnie\\'s Chicken and Waffles that used to be only offered at lunch again proved to be the city\\'s best-even better than the one offered by Yardbird down the way-thanks to the great Brine, shattering Skin and spicy Glaze.\\n\\nAt this point quite full, but assuming the best was yet to come, it was in two large plates decorated with Chocolate that the meal came to its finish, a total of eight different Desserts including a few not yet even listed with highlights coming from all angles, both the Lemon Bar and Key Lime Pie tangy yet rich atop their respective crusts while the Pecan Pie and Emeril\\'s famous Banana Cream version remain indisputable classics, the German Chocolate Cake sadly a bit dry while the Butterscotch Pudding was the sort of thing that almost caused a fight as diners tried to decide who would get the last, creamy spoonful.",
+          "useful": 5,
+          "funny": 3,
+          "cool": 5
+      },
+      {
+          "id": "5ED640-83V_8BuXGjDoAJQ",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "2zX_qQUGocOdbFL-k8U0VA",
+          "stars": 3,
+          "date": "2017-04-08T07:00:00.000Z",
+          "text": "The steaks were very moist and tasty.  The service was not the best.  It was early in the evening and the place was not packed so to wait for 20 minutes for a steak seams a little too long.  Either way, that evened out to being about average for a place that was pretty expensive price point.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "2FnSdsWO0q3aAe45-rIkGg",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "BipK9_ELmklpV7SPm3_P6g",
+          "stars": 4,
+          "date": "2017-03-06T08:00:00.000Z",
+          "text": "I had the seared halibut with peas. It was very good and not dry.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "3cnTdE45VrsS0o4cVhfGog",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "rOIrilMC7VFwFVBeQNiKMw",
+          "stars": 3,
+          "date": "2017-02-12T08:00:00.000Z",
+          "text": "Located inside my favorite hotel Venetian, Delmonico is one of Emeril\\'s restaurant. When you walk in, the decor is very minimal but sophisticated with arched ceilings that makes you feel like you\\'re inside a European gallery. \\n\\nWe ordered the following:\\n-Deviled eggs: delicious! Very creamy, topped with King Crab meat is a plus.\\n-truffle potato chips: good sharable appetizer. \\n-New Orleans style barbecue shrimp: if you\\'re into Cajun style barbecue shrimp, definitely order this dish. A bit different from the ones we had in New Orleans but still good. \\n-Lobster bisque: has good amount of chunky Lobster meat, but not the best I\\'ve had. \\n-ribeye: due to pregnancy, I had to order a well done steak. My steak came close to medium well, pink in the inside. I sent the steak back, it came back still not completely well done. Sent it back for the second time and the steak came back as beef jerky.. I expected at least the second time around for them to make a new one as I know the effect of cooking a piece of steak multiple times. Of course I wasn\\'t expecting a well done steak to be juicy and tender but I have had a properly cooked well done steak before that\\'s was not super tough! Flavor on the steak was pretty good, but could not taste the dry aged flavor as much. In the end, the restaurant took this off the bill, which was a nice gesture. \\n-sides: Creamy corn (very good), mushrooms (a bit salty but good flavor), twice baked potatoes (good). \\n\\nOverall, I would give this restaurant 3 and a half stars.",
+          "useful": 2,
+          "funny": 1,
+          "cool": 1
+      },
+      {
+          "id": "44I4sMsa2nHcQK3Zz68YyA",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "Wevzu2iYYel-q29Gctd58Q",
+          "stars": 3,
+          "date": "2017-02-04T08:00:00.000Z",
+          "text": "Food was delicious!! I had the salmon with the  potato hash, my girlfriend had the chicken and waffles. For sides we had the cheesy grits and asparagus. LOVED the popovers.\\n\\nThe service was weird... our waiter was knowledgeable and professional but seemed preoccupied, always looking around while talking to us. There was a group at the table next to us and he seemed much more attentive to them. \\n\\nAnother waiter came over at the end of our dinner and we asked what spice was used in the waffle- he said he didn\\'t know. I then asked where The Dorsey was in proximity to the restaurant, he said- again, I don\\'t know........ he didn\\'t even attempt to answer our questions. Great food, less than adequate service.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 1
+      },
+      {
+          "id": "4e46gGLhSPbMneORxbPgDA",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "YJquKPRim02PvqK5rEdYmQ",
+          "stars": 5,
+          "date": "2016-11-05T07:00:00.000Z",
+          "text": "Amazing service and delicious food!  Steak cooked perfectly.  Sides were all yummy!  The biggest baked potato I have ever seen!  All sides are sharable portions!  Wait staff kept my water glass refilled, this is extremely important to me, as that is all I drink.  Noisy atmosphere, but there were 7 of us, so not bothersome.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      }
+  ],
+  pageTen: [
+      {
+          "id": "1LdNJCyZ6HVZV1zyieIy-A",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "BybcTvf0el88wkvchX0fZg",
+          "stars": 4,
+          "date": "2011-09-05T07:00:00.000Z",
+          "text": "My Husband took me here for our anniversary dinner. We arrived early at five because we had theatre tickets and had made dinner reservations accordingly.  The restaurant is beautiful with cream walls, rock wood and glass throughout with romantic lighting the evening was looking good. We ordered starters Crab Cakes for my husband nice crispy well seasoned crab I love a crab cake that is more crab then filler and this one was that. I ordered the steak tartar because I\\'ve never had it and wanted to be daring. I have to say I was scared lol but it was so worth it. Wonderful crisp toasted baguettes with rich beef capers oil and seasoning and spicy mustard sauce  this has got to be one of the best dishes I\\'ve ever eaten and a must try. We then followed this with Lobster bisque  rich warm and creamy with plenty of lobster one of my favorite lobsters bisques definitely.  I had the petite iceberg lettuce wedges a nice take on the classic salad with Wisconsin blue cheese buttermilk dressing homemade apple wood bacon and just the right amount of red onion really tangy. For our entrée we had chosen to go with the  Chateaubriand for two. They carve it tableside and serve it with asparagus and garlic potatoes The sides were actually very good but the meat was just ok nothing special and more red then I care for We had also ordered a side of sautéed garlic wild mushrooms which were also just ok I\\'ve had better versions of both these dishes. On to dessert we were bad and ordered two. The Chocolate root beer float which was not that great I guess we just didn\\'t care for the ginger and chocolate flavors together so we didn\\'t finish this one but the banana cream pie was like biting into heaven little shavings of chocolate rich sweet whipped cream bananas and sweet rich caramel sauce make up this dish and it\\'s worth every calorie that\\'s probably packed into it. So splurge and have it it\\'s amazing. The wait staff was amazing making sure you never wanted for anything and that everything went smoothly and the wine selection and service was top notch. Definitely worth the splurge",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "4dr-N7avMSrWefd918i5nw",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "uqClOaTJDTlwrajeuZPMOA",
+          "stars": 5,
+          "date": "2011-08-08T07:00:00.000Z",
+          "text": "Everything on the menu is made with a little bit of heaven, a pinch of happiness, and two cups of love. Must try the lobster bisque !!! It\\'s so amazing I considered asking the chef to have my children.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "0ygrSAgzIQqDADMdkqmSIw",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "VTMoL4UWFlJqJo5-Cl1AgQ",
+          "stars": 1,
+          "date": "2011-07-17T07:00:00.000Z",
+          "text": "Service was Horrible, Food was Cold, Drinks were Hot!  Just plain Lousy.\\nVery Disappointing!  Go to Prime Steak House instead @ the Bellagio",
+          "useful": 1,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "2WLCuFeSrZRPbs5SwjMIiQ",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "PXbw--eK-Ot1g0dDH8X5SQ",
+          "stars": 5,
+          "date": "2011-07-10T07:00:00.000Z",
+          "text": "A trip to Las Vegas just isn\\'t a trip to Vegas without a stop at Delmonico. So I think I\\'ve been to Delmonico six or seven times and the operative word is consistency. Always great service, always great food and just overall my favorite steakhouse.\\n\\nSo what isn\\'t to like about Emeril\\'s house of meat?\\n\\nA very well stocked bar, a nice wine list and perfectly cooked steaks.\\n\\nI started with the lettuce wedges with fresh blue cheese and got the rib eye. I don\\'t know how they do it but the steaks always have this crispy, char on the outside but have a good juicy center with lots of flavor.\\n\\nWe shared the grits, corn and mushrooms as sides and they were tasty good.\\n\\nLike I said, this is a special occasion place and Delmonico has yet to disappoint. \\n\\nThanks Emeril for always making my trip to Vegas!",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "34myoOj--YoYf4oaOSUqcg",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "Sl4ZORA8uCnsIDe9qN1vCg",
+          "stars": 2,
+          "date": "2011-05-26T07:00:00.000Z",
+          "text": "tries to be sophisticated, but it is average at best.\\nMaybe if you are used to Burger King this joint is awesome, but it is just an average steakhouse.\\n\\nBTW: the men\\'s WC door lock doesn\\'t lock, so everyone that wants to go to the crapper will see you in the throne....",
+          "useful": 0,
+          "funny": 2,
+          "cool": 0
+      },
+      {
+          "id": "0Th5G-uyjyQqonBJk9-fSg",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "Zsfc3e_arKRDQuYuQ-rDRA",
+          "stars": 4,
+          "date": "2011-05-13T07:00:00.000Z",
+          "text": "Soo pricey but what a delicious meal.  My filet was a perfect medium rare and the spices they had for the charring made it one of the best steaks i\\'ve had in my life",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "-2QZjEm6coyl3YQ7YHeOXA",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "drrUNO_oPVFTCl0Piew-0Q",
+          "stars": 3,
+          "date": "2011-04-11T07:00:00.000Z",
+          "text": "Was excited to go here since it was Emerille\\'s Steakhouse.  We had reservations for 8PM and waited at the bar while they got our table ready. The waiter was really nice and friendly.  They brought us bread which they placed individually on our plates. I started with the spinach and arugula salad, which was super good. I was glad to have had that in my stomach, since it took a while to get our steaks.\\n\\nI ordered the filet, medium and a side of asparagus.  The steak was seared a little too much and tasted a little burnt.  They also topped it off with a pad of butter.  By no means was it a bad steak, but for the price, I guess I expected more.  The asparagus was good but also very buttery.  Good food, but I have definitely had better.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "3PjT8n8rpkwLRuObXLmm3w",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "96aWRa-gy1RrsrFQURagvg",
+          "stars": 2,
+          "date": "2011-03-31T07:00:00.000Z",
+          "text": "We went in with high hopes after a friend recommended Delmonico but we left just a bit disappointed.  The ambiance was really nice and we were given a great table without a reservation but the food left a little to be desired.  \\n\\nMy friend and I both started with lobster bisque, which was good but a little thin.  We noticed right away too that she had 2 tiny little pieces of lobster in hers, but I had almost an entire small claw.  I was happy until I realized it was tough and rubbery.  I actually had to use a knife and fork to cut it into bite sized pieces.  My husband ordered the wedge salad as a starter and it was 80% white/yellow core.  Not what you would expect in a place as pricey as this.\\n\\nI ordered the fillet and it was cooked perfectly but it was not a great cut of meat.  Maybe I have high standards, but I think a $30+ fillet should be butter knife soft, but this one was kind of fibrous and hard to cut with a steak knife.  I didn\\'t really care for the seasoning either, but that\\'s a personal preference, not something I can count against the restaurant.  My husband\\'s rib eye was really fatty but he loved his twice baked potato.  I had the corn gratin for my side and it was tasty but again, not my style.  \\n\\nOur server was efficient but pretty standoffish.  When we first sat down, we ordered a bottle of \\\"Emerel\\'s Blend\\\" wine and he nicely suggested that we might want to try something else, but other than that, his interaction with us was a bit cold.  \\n\\nMaybe it was an off night, but I really expected more from a $400+ dinner.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 1
+      },
+      {
+          "id": "-ogKPaiHquD1m6SxdfjRWQ",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "qOODN0RsLbNQaLPN3srixQ",
+          "stars": 4,
+          "date": "2011-02-09T08:00:00.000Z",
+          "text": "First impressions......Unfortunately, Delmonico Steakhouse made a huge mistake when they seated my party of three at the table right in front of the kitchen door with a restaurant that was less than half full.  Offensive and unacceptable.  The hostess ran in one direction and a staff member told us we would have to make our way back up to the front to deal with this issue when we told them that this would not work for us.  After a word with someone who claimed to be the manager at the front, we were reseated and promptly given complimentary truffle chips (that can solve any bad first impression).  The truffle chips are not to be missed.  \\n\\nService-  Our server eventually warmed up and was pleasant.   He was so caught up in his speeches about different parts of the menu and recommendations, that it took some time to see his true personality.  He was also rushed, which was odd, as we had some menu questions.  \\n\\nFood-  The filet was magical.  This is the primary reason that the restaurant got 4 stars.  The creole seasoning and dab of BUTTER on the steak were an amazing and sinful treat.  Really delicious.\\n\\nThe cheese grits were delicious.  I was a bit less impressed with the creamed spinach.  The waiter said that it was better than CUT\\'s version.  NO WAY!  Underwhelming.",
+          "useful": 0,
+          "funny": 0,
+          "cool": 0
+      },
+      {
+          "id": "169pajMYDIdSy06fOgSy_g",
+          "business_id": "--9e1ONYQuAa-CB_Rrw7Tw",
+          "user_id": "lcrcput-8GMw6St64LIr9Q",
+          "stars": 3,
+          "date": "2011-01-15T08:00:00.000Z",
+          "text": "Delmonico Steakhouse was pretty good, but definitely not the best I\\'ve had nor without flaws.\\n\\nThe food and drink choices seem to be where they really excel, as there were a number of options that my girlfriend and I found to be mouth-watering, from the bone-in ribeye, the fillet, the chicken, salmon, etc.  They had my favorite beer (Chimay Blue) and she enjoyed her wine (she had the Chardonnay and Riesling).  What we wanted when going here was a nice, fancy dinner as a tribute to our vacation together.  It wasn\\'t a special occasion or anything but we like to have a quality dinner from time to time.  I\\'d say the food part of Emeril\\'s more or less did the trick with regards to that.\\n\\nThe service was OK.  While they were relatively prompt the matre\\'d was the person who seemed to be serving us and he was just a little too over-the-top for me, not to mention he seemed a little condescending and careless.  Perhaps I just read into it wrong, but I didn\\'t feel as comfortable as I have at other restaurants.  Our waiters made sure the waters and bread kept coming, which I appreciated.  The matre\\'d didn\\'t really do anything rude per-say, but I did notice that at one point when he came by to check on everything he spoke with the tables on our left and right but not with us.  \\n\\nThe smaller tables are a little too big IMO, my girlfriend and I felt a mile away from each other and eventually I just moved my place settings next to her and sat with her so we could talk easier.  This is probably not an issue if you have a big group, but for a romantic evening it wasn\\'t fantastic.  Speaking of romance, there were no candles, the lightning was bright, and the restaurant was devoid of decor. \\n\\nI don\\'t mean to rip Delmonico\\'s so much but I just want to stress that this restaurant really doesn\\'t deserve 5 stars despite the food being pretty tasty.  Our stakes came out medium rare as requested, they were juicy and delicious, and the side \\\"double-baked potato\\\" + \\\"Asparagus\\\" was fantastic.\\n\\nI realized going here and glancing at the menu online that the prices were going to be steep but I guess my wallet received a shock even so.  I had initially been hoping that our bill would come to about $115-130, but in the end it was $200 because you have to buy sides for your meal separately and the wine / beer was very expensive.  The problem with this is that in Vegas there is a lot of competition and I\\'ve had food that was on par with this for under half the price of what I paid.  For instance Mon Ami Gabi (outside of Paris, Paris) and Trevi (Ceasar\\'s Palace Forum Shops) both run in the $60-100 range (for two) and are just as tasty IMO.\\n\\nLastly, there were a nat or two flying around toward the end of our meal, something which is unacceptable in a restaurant of this caliber.  \\n\\nI enjoyed the overall experience but I would not dine here again.",
+          "useful": 2,
+          "funny": 0,
+          "cool": 0
+      }
+  ]
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 23 2018 16:01:28 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+<script src="../block-navigation.js"></script>
+</body>
+</html>
