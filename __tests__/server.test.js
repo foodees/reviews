@@ -1,18 +1,24 @@
-// const axios = require('axios');
+
 const request = require('supertest');
 const server = require('../server/app.js');
 
 // dummy data for /reviews/desc
-let reviewData = require('../dummyData/reviewData.js');
-let userData = require('../dummyData/userData.js');
+jest.mock('reviewData');
+jest.mock('userData');
+let reviewData = require('reviewData');
+let userData = require('userData');
 
 //dummy data for /reviews/asc
-let reviewAscData = require('../dummyData/reviewAscData.js');
-let userAscData = require('../dummyData/userAscData.js');
+jest.mock('reviewAscData');
+jest.mock('userAscData');
+let reviewAscData = require('reviewAscData');
+let userAscData = require('userAscData');
 
 //dummy data for /reviews/ratingdesc
-let reviewRatingData = require('../dummyData/reviewRatingData.js');
-let userRatingData = require('../dummyData/userRatingData.js');
+jest.mock('reviewRatingData');
+jest.mock('userRatingData');
+let reviewRatingData = require('reviewRatingData');
+let userRatingData = require('userRatingData');
 
 //dummy data for /reviews/asc
 
@@ -97,4 +103,14 @@ describe('Test the all endpoints for correct responses with supertest', () => {
     //   //   done();
     //   // });
     // });
+
+    // ...
+
+    test('/reviews/getCount should return response the number of reviews for a restaurant', (done) => {
+      request(server.app).get('/biz/--9e1ONYQuAa-CB_Rrw7Tw/reviews/count/?id=--9e1ONYQuAa-CB_Rrw7Tw').then(response => {
+        expect(response.statusCode).toBe(200);
+        expect(JSON.stringify(response.body)).toBe('[{"count":"141"}]');
+        done();
+      });
+    });
 });
