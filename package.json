@@ -14,10 +14,16 @@
     "postgres-shell-start": "psql foodee_user_reviews",
     "test": "jest --coverage"
   },
+  "jest": {
+    "setupFiles": [
+      "./jestsetup.js"
+    ]
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
+    "css-loader": "^0.28.11",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
     "knex": "^0.14.6",
@@ -30,6 +36,7 @@
     "react-dom": "^16.3.1",
     "react-paginate": "^5.2.2",
     "react-stars": "^2.2.5",
+    "style-loader": "^0.21.0",
     "webpack": "^4.5.0"
   },
   "devDependencies": {
@@ -40,8 +47,13 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
+    "react-test-renderer": "^16.3.2",
     "superagent": "^3.8.2",
     "supertest": "^3.0.0",
     "webpack-cli": "^2.0.14"
