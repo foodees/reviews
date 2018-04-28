@@ -76,6 +76,16 @@ ul {
   font-weight: bold;
 }
 
+
+.reviewStars {
+ width: 82px;
+ height: 14px;
+ background: url(https://s3-us-west-1.amazonaws.com/foodeephotos/yelpStars.png?versionId=null) no-repeat;
+ background-size: 132px 560px;
+ display: inline-block;
+ padding-right: 5px;
+}
+
 /* .user-contents, .review-contents {
   display: flex;
   flex-direction: row;

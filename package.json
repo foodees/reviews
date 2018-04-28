@@ -8,11 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "react-dev": "webpack -d --watch",
-    "server-start": "nodemon server/app.js",
+    "react-dev": "webpack -p",
+    "server-start": "node server/app.js",
+    "db-seed": "node database/knex_postgres_seed/data/foodee_restaurant_names.js",
     "db-server-start": "pg_ctl -D /usr/local/var/postgres start",
     "postgres-shell-start": "psql foodee_user_reviews",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "docker": "npm run react-dev && npm run db-seed && npm run server-start"
   },
   "jest": {
     "setupFiles": [
@@ -50,7 +52,6 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-15": "^1.0.5",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^22.4.3",
     "jest-enzyme": "^6.0.0",
     "react-test-renderer": "^16.3.2",

@@ -43,7 +43,7 @@ class App extends React.Component {
   }
 
   getRestaurantName(id) {
-    axios.get(`http://localhost:3004/biz/${id}/reviews/restaurant`,
+    axios.get(`http://18.144.7.69:3004/biz/${id}/reviews/restaurant`,
       {
         params: {
           id: id
@@ -63,7 +63,7 @@ class App extends React.Component {
   getReviewCount(searchTerm = '') {
     var params;
     if (searchTerm === '') {
-      axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/count`,
+      axios.get(`http://18.144.7.69:3004/biz/${this.state.restaurantId}/reviews/count`,
         {
           params: {
             id: this.state.restaurantId
@@ -83,7 +83,7 @@ class App extends React.Component {
         id: this.state.restaurantId,
         term: searchTerm
       };
-      axios.get(`http://localhost:3004/biz/${this.state.restaurantId}/reviews/search/count`,
+      axios.get(`http://18.144.7.69:3004/biz/${this.state.restaurantId}/reviews/search/count`,
         {
           params: {
             id: this.state.restaurantId,
@@ -105,7 +105,7 @@ class App extends React.Component {
   getReviews(id, page, sortOrder = '/desc', searchTerm = '') {
     var params;
     if (searchTerm === '') {
-      axios.get(`http://localhost:3004/biz/${id}/reviews${sortOrder}`,
+      axios.get(`http://18.144.7.69:3004/biz/${id}/reviews${sortOrder}`,
         {
           params: {
             id: id,
@@ -124,7 +124,7 @@ class App extends React.Component {
               console.log('CLIENT GET ERROR: ', err);
             });
     } else {
-      axios.get(`http://localhost:3004/biz/${id}/reviews/search${sortOrder}`,
+      axios.get(`http://18.144.7.69:3004/biz/${id}/reviews/search${sortOrder}`,
         {
           params: {
             id: id,

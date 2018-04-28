@@ -1,7 +1,18 @@
 //DB INDEX.JS
 
 const pg = require('pg');
-const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/foodee_user_reviews';
+
+// var knex = require('knex')({
+//   client: 'pg',
+//   connection: {
+//     host : '127.0.0.1',
+//     user : 'postgres',
+//     password : 'postgres',
+//     database : 'postgres'
+//   }
+// });
+
+const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@database/foodee_user_reviews';
 
 const connection = new pg.Client(connectionString);
 

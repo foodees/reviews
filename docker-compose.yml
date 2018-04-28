@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  reviews:
+    build: .
+    depends_on:
+      - 'database'
+    ports:
+      - '3004:3004'
+
+  database:
+    image: postgres
+    environment:
+      POSTGRES_DB: foodee_user_reviews
