@@ -1,4 +1,4 @@
-//CONTROLLA
+//CONTROLLER
 
 const model = require('../model');
 

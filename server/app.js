@@ -1,7 +1,6 @@
 //SERVER APP.JS
 
 var express = require('express');
-// var db = require('./db');
 var cors = require('cors');
 
 var morgan = require('morgan');
@@ -20,7 +19,7 @@ app.use(morgan('dev'));
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
-//TODO UNCOMMENT THIS AFTER CLIENT IMPLEMENTATION
+
 app.use('/biz/:business_id', express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/biz/:business_id/reviews', router);

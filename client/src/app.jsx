@@ -11,7 +11,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // iterator: window.location.href.split("/").pop().substring(4) || '1',
       restaurantId: window.location.href.split('/')[4],
       restaurantName: '',
       page: 1,
@@ -22,9 +21,6 @@ class App extends React.Component {
       sortBy: 'newestFirst'
     };
   }
-
-  //TODO: Add restaurant name column to foodee_reviews table
-  // dummy data: // SELECT * FROM foodee_reviews WHERE business_id = '--9e1ONYQuAa-CB_Rrw7Tw' ORDER BY date DESC OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
 
   componentDidMount() {
     this.getReviewCount();
@@ -163,10 +159,6 @@ class App extends React.Component {
   }
 
   render () {
-    //var reviewsArr = JSON.parse(JSON.stringify(this.state.reviews));
-    //implement sorting of reviews by date / rating
-      // new db query for each sort zzzz
-
     return (
     <div id="reviews">
       <h2><span id="review-header">Recommended Reviews</span> for {this.state.restaurantName}</h2>
@@ -187,7 +179,6 @@ class App extends React.Component {
         onPageChange={(page) => {
             console.log('page: ', page.selected + 1);
             if (this.state.sortBy === 'newestFirst') {
-              //console.log('yoo');
               this.setState({
                 page: page.selected + 1
               }, () => {
@@ -218,6 +209,5 @@ class App extends React.Component {
   }
 }
 
-// ReactDOM.render(<App />, document.getElementById('app'));
 
 export default App;

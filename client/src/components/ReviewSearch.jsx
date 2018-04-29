@@ -17,7 +17,5 @@ var ReviewSearch = (props) => (
   </div>
 );
 
-//"^4.5.0"
-//"^2.2.1"
 
 export default ReviewSearch;
