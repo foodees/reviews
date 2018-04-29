@@ -146,10 +146,12 @@ class App extends React.Component {
     }
   }
 
-  changeSort() {
+  changeSort(e) {
     this.setState({
-      sortBy: $('#sortBy').val()
+      // sortBy: $('#sortBy').val()
+      sortBy: e.target.value
     }, () => {
+      console.log('YOOOOOO: ', e.target.value);
       if (this.state.sortBy === 'newestFirst') {
         this.getReviews(this.state.restaurantId, this.state.page, '/desc', this.state.searchTerm);
       } else if (this.state.sortBy === 'oldestFirst') {
