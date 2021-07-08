@@ -1,13 +1,15 @@
 var knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'rj',
-    password : '',
+    host : 'database',
+    user : 'postgres',
+    password : 'postgres',
     database : 'foodee_user_reviews'
   }
 });
 
+var users = require('./foodee_users.js');
+var reviews = require('./foodee_reviews.js');
 
 var restaurantNames = [
   {
@@ -412,9 +414,203 @@ var restaurantNames = [
   }
 ];
 
-for (var i = 0; i < restaurantNames.length; i++) {
-  knex('foodee_restaurant_names').insert(restaurantNames[i]).then(() => {
-    console.log('inserted');
-  });
+//
 
+var userTable = function() {
+  return new Promise((resolve, reject) => {
+    knex.schema.createTable('foodee_users', (table) => {
+      table.string('id').primary();
+      table.string('name');
+      table.integer('review_count');
+      table.dateTime('yelping_since');
+      table.integer('useful');
+      table.integer('funny');
+      table.integer('cool');
+      table.integer('fans');
+      table.float('average_stars');
+      table.integer('compliment_hot');
+      table.integer('compliment_more');
+      table.integer('compliment_profile');
+      table.integer('compliment_cute');
+      table.integer('compliment_list');
+      table.integer('compliment_note');
+      table.integer('compliment_plain');
+      table.integer('compliment_cool');
+      table.integer('compliment_funny');
+      table.integer('compliment_writer');
+      table.integer('compliment_photos');
+    }).then(() => {
+      resolve();
+    }).catch(() => {
+      reject();
+    });
+
+  });
 }
+
+var reviewTable = function() {
+  return new Promise((resolve, reject) => {
+    knex.schema.createTable('foodee_reviews', (table) => {
+      table.string('id');
+      table.string('business_id');
+      table.string('user_id');
+      table.integer('stars');
+      table.dateTime('date');
+      table.string('text', 10000);
+      table.integer('useful');
+      table.integer('funny');
+      table.integer('cool');
+    }).then(() => {
+      resolve();
+    }).catch(() => {
+      reject();
+    });
+  });
+}
+
+
+var restaurantTable = function() {
+  return new Promise((resolve, reject) => {
+    knex.schema.createTable('foodee_restaurant_names', (table) => {
+      table.string('business_id');
+      table.string('business_name');
+    }).then(() => {
+      console.log('RESTAURANT TABLE RESOLVED!')
+      resolve();
+    }).catch((err) => {
+      console.log('restaurant table creation err: ', err);
+      reject(err);
+    });
+  });
+}
+
+
+//
+
+var restaurantSeed = function() {
+  return new Promise((resolve, reject) => {
+    var promiseArr = [];
+    for (var i = 0; i < restaurantNames.length; i++) {
+      promiseArr.push(knex('foodee_restaurant_names').insert(restaurantNames[i]));
+    }
+    Promise.all(promiseArr).then(() => {
+      console.log('inserted all restaurants');
+      resolve();
+    }).catch((err) => {
+      console.log('restaurant table creation err: ', err);
+      reject(err);
+    });
+    // if (i === restaurantNames.length) {
+    //   resolve();
+    // }
+  });
+}
+
+var reviewSeed = function() {
+  return new Promise((resolve, reject) => {
+    var promiseArr = [];
+    for (var j = 0; j < reviews.length; j++) {
+      promiseArr.push(knex('foodee_reviews').insert(reviews[j]));
+    }
+    Promise.all(promiseArr).then(() => {
+      console.log('inserted all reviews');
+      resolve();
+    }).catch((err) => {
+      console.log('review table creation err: ', err);
+      reject(err);
+    });
+    // if (j === reviews.length) {
+    //   resolve();
+    // }
+
+  });
+}
+
+
+var userSeed = function() {
+  return new Promise((resolve, reject) => {
+    var promiseArr = [];
+    for (var k = 0; k < users.length; k++) {
+      promiseArr.push(knex('foodee_users').insert(users[k]));
+    }
+    Promise.all(promiseArr).then(() => {
+      console.log('inserted all users');
+      resolve();
+    }).catch((err) => {
+      reject(err);
+    });
+    // if (k === users.length) {
+    //   resolve();
+    // }
+  });
+}
+
+
+Promise.all([restaurantTable(), userTable(), reviewTable()]).then((value) => {
+  console.log('ALL TABLES CREATED: ', value)
+  Promise.all([reviewSeed(), userSeed(), restaurantSeed()]).then(() => {
+    knex.destroy(() => {
+      console.log('db connection closed');
+    });
+  });
+});
+
+// userTable.then(() => {
+//   restaurantTable.then(() => {
+//     reviewTable.then(() => {
+//       userSeed.then(() => {
+//         restaurantSeed.then(() => {
+//           reviewSeed.then(() => {
+//             knex.destroy(() => {
+//               console.log('db connection closed');
+//             });
+//           });
+//         });
+//       });
+//     });
+//   });
+// });
+
+// knex.raw(`select count(*) from pg_catalog.pg_database where datname = 'foodee_user_reviews'`)
+//   .then(response => {
+//       console.log('db exists? ', response.rows[0].count);
+//
+//       if (response.rows[0].count === '1') {
+//         knex.raw('CREATE DATABASE foodee_user_reviews').then(() => {
+//           console.log('CREATED DB');
+//           for (var i = 0; i < restaurantNames.length; i++) {
+//             knex('foodee_restaurant_names').insert(restaurantNames[i]).then(() => {
+//               console.log('inserted restaurant name');
+//             });
+//           }
+//         })
+//           .then(() => {
+//             for (var i = 0; i < reviews.length; i++) {
+//               knex('foodee_reviews').insert(reviews[i]).then(() => {
+//                 console.log('inserted review');
+//               });
+//             }
+//           })
+//             .then(() => {
+//               for (var i = 0; i < users.length; i++) {
+//                 knex('foodee_restaurant_names').insert(users[i]).then(() => {
+//                   console.log('inserted user');
+//                 });
+//               }
+//             }).then(() => {
+//               knex.destroy(() => {
+//                 console.log('db connection closed');
+//               });
+//             });
+//       }
+//       // else if (response.rows[0].count === '1') {
+//       //   knex.destroy(() => {
+//       //     console.log('db connection closed');
+//       //   });
+//       // }
+//   }).catch(err => {
+//     console.log('err: ', err);
+//     knex.destroy(() => {
+//       console.log('db connection closed');
+//     });
+//   })
